@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Dashboard</title><meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<section id="loginBox" class="hidden relative z-10 min-h-screen flex items-center justify-center p-4">
+ <form id="loginForm" class="glass glow p-8 w-full max-w-sm space-y-4">
+  <h1 class="text-2xl font-extrabold grad-text">Admin Login</h1>
+  <input name="email" type="email" required class="inp" placeholder="Email" autocomplete="username">
+  <input name="password" type="password" required class="inp" placeholder="Password" autocomplete="current-password">
+  <button class="btn w-full" type="submit">Login</button>
+  <a href="index.html" class="block text-center text-sm muted">← Kembali ke website</a>
+ </form>
+</section>
+<div id="app" class="hidden relative z-10 min-h-screen md:flex">
+ <aside class="side glass m-3 md:w-60 md:shrink-0 p-3 flex md:flex-col gap-1 overflow-x-auto md:overflow-visible md:h-[calc(100vh-1.5rem)] md:sticky md:top-3">
+  <div class="hidden md:block font-extrabold text-lg grad-text px-3 py-3">&lt;admin/&gt;</div>
+  <a data-v="dashboard">📊 Dashboard</a><a data-v="projects">🚀 Projects</a><a data-v="skills">⚡ Skills</a><a data-v="experiences">💼 Experience</a><a data-v="certificates">🏅 Certificates</a><a data-v="gallery">📸 Gallery</a><a data-v="messages">✉️ Messages <b id="badge" class="tag hidden"></b></a><a data-v="profile">👤 Profile</a>
+  <a id="logoutBtn" class="md:mt-auto">🚪 Logout</a>
+ </aside>
+ <main class="flex-1 p-4 md:p-8 min-w-0"><div id="view"></div></main>
+</div>
+<div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm"><div id="modalBody" class="glass p-6 w-full max-w-lg max-h-[90vh] overflow-y-auto"></div></div>
+<div id="toast" class="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase.js"></script><script src="js/auth.js"></script><script src="js/admin.js"></script>
+</body></html>
